@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const mongoose = require('mongoose')
 const Joi = require('joi')
 
@@ -65,26 +64,3 @@ const validAppointment = (appointment) => {
 
 module.exports.Appointment = Appointment
 module.exports.validate = validAppointment
-=======
-const mongoose = require("mongoose");
-const { Schema } = mongoose;
-
-const appointmentSchema = new mongoose.Schema({
-    start_time: { type: String, required: true },
-    end_time: { type: String, required: true },
-    description: { type: String, required: true },
-    fee_paid: {
-      type: String,
-      enum: {
-        values: ["USD", "EUR", "Bitcoin", "Unpaid"],
-        message: "Pet Type is other than included",
-      },
-      required: true,
-    },
-    amount: { type: Number, required: true },
-    Date: { type: Date, required: true },
-  });
-  const Appointment = mongoose.model("Appointment", appointmentSchema);
-
-    module.exports = Appointment;
->>>>>>> 7424e4aebce2306b5a4ee9298ddcd8e98295892d
