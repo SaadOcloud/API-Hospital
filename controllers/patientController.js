@@ -41,8 +41,8 @@ const createPatient = async (req, res) => {
   }
 
   const newPatient = new Patient({
-    name: req.body.name,
-    type: req.body.type,
+    petName: req.body.petName,
+    petType: req.body.petType,
     ownerName: req.body.ownerName,
     ownerAddress: req.body.ownerAddress,
     ownerPhoneNo: req.body.ownerPhoneNo,
@@ -85,8 +85,8 @@ const updatePatient = async (req, res) => {
     let patient = await Patient.findByIdAndUpdate(
       req.params.id,
       {
-        name: req.body.name,
-        type: req.body.type,
+        petName: req.body.petName,
+        petType: req.body.petType,
         ownerName: req.body.ownerName,
         ownerAddress: req.body.ownerAddress,
         ownerPhoneNo: req.body.ownerPhoneNo,
