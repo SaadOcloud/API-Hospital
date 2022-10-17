@@ -2,14 +2,14 @@ const mongoose = require('mongoose')
 const Joi = require('joi')
 
 const patientSchema = new mongoose.Schema({
-    name: {
+    petName: {
         type: String,
         required: true,
         trim: true,
         minlength: 5,
         maxlength: 255
     },
-    type: {
+    petType: {
         type: String,
         enum: ['cat', 'dog', 'bird'],
         required: true,
@@ -46,8 +46,8 @@ const Patient = new mongoose.model('Patient', patientSchema)
 
 const validPatient = (patient) => {
     const schema = {
-        name: Joi.string().min(5).max(255).required(),
-        type: Joi.string().required(),
+        petName: Joi.string().min(5).max(255).required(),
+        petType: Joi.string().required(),
         ownerName: Joi.string().min(5).max(255).required(),
         ownerAddress: Joi.string().min(5).max(255).required(),
         ownerPhoneNo: Joi.string().min(5).max(55).required(),
